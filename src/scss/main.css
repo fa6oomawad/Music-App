@@ -1,0 +1,19 @@
+.full-page {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#a8edea), to(#fed6e3));
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+.side-nav {
+  height: 85vh;
+  width: 22vw;
+  margin: 15px;
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 12px;
+  display: inline-block;
+  -webkit-box-shadow: 9px 10px 13px -4px #b0b0b0;
+  box-shadow: 9px 10px 13px -4px #b0b0b0;
+}
+/*# sourceMappingURL=main.css.map */
