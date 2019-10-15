@@ -8,6 +8,7 @@
 .side-nav {
   height: 85vh;
   width: 22vw;
+  vertical-align: top;
   margin: 15px;
   margin-top: 40px;
   background-color: white;
@@ -15,5 +16,67 @@
   display: inline-block;
   -webkit-box-shadow: 9px 10px 13px -4px #b0b0b0;
   box-shadow: 9px 10px 13px -4px #b0b0b0;
+  color: grey;
+}
+
+.side-nav .side-list {
+  list-style: none;
+  padding-left: 30px;
+  margin-top: 6px;
+}
+
+.side-nav .side-list li {
+  cursor: pointer;
+  color: grey;
+  margin-bottom: 8px;
+  /* letter-spacing: -0.5px; */
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.side-nav h3 {
+  padding: 2px;
+  padding-left: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.boxes-wrapper {
+  -webkit-box-shadow: 9px 10px 13px -4px #b0b0b0;
+          box-shadow: 9px 10px 13px -4px #b0b0b0;
+  display: inline-block;
+  height: 85vh;
+  width: 66vw;
+  margin-top: 40px;
+  margin-left: 21px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  padding: 14px;
+}
+
+.boxes-wrapper .grid-wrap {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 14px;
+      grid-template-areas: "box1 box2 box3 box4 box5" "box6 box7 box8 box9 box10" "box11 box12 box13 box14 box15";
+}
+
+.boxes-wrapper .grid-wrap .small-box {
+  width: 153px;
+  height: 155px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.boxes-wrapper .grid-wrap .small-box img {
+  height: 90%;
+  width: 100%;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
 }
 /*# sourceMappingURL=main.css.map */
