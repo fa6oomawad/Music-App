@@ -1,3 +1,7 @@
+$font-color: grey;
+$border-rad: 12px;
+$shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
+$shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
 .full-page {
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   width: 100vw;
@@ -6,12 +10,74 @@
 .side-nav {
   height: 85vh;
   width: 22vw;
+  vertical-align: top;
+
   margin: 15px;
   margin-top: 40px;
   background-color: white;
-  border-radius: 12px;
+  border-radius: $border-rad;
   display: inline-block;
-  -webkit-box-shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
-  -moz-box-shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
-  box-shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+  color: $font-color;
+
+  .side-list {
+    list-style: none;
+    padding-left: 30px;
+    margin-top: 6px;
+    li {
+      cursor: pointer;
+      color: $font-color;
+      margin-bottom: 8px;
+      /* letter-spacing: -0.5px; */
+      font-size: 16px;
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+  }
+  h3 {
+    padding: 2px;
+    padding-left: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+  }
+}
+
+.boxes-wrapper {
+  box-shadow: $shadow;
+  display: inline-block;
+  height: 85vh;
+  width: 66vw;
+  margin-top: 40px;
+  margin-left: 21px;
+  border-radius: $border-rad;
+  -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  padding: 14px;
+  .grid-wrap {
+    display: grid;
+    grid-gap: 14px;
+    grid-template-areas:
+      "box1 box2 box3 box4 box5"
+      "box6 box7 box8 box9 box10"
+      "box11 box12 box13 box14 box15";
+    .small-box {
+      width: 153px;
+      height: 155px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+
+      img {
+        height: 90%;
+        width: 100%;
+        border-radius: $border-rad;
+
+        box-shadow: $shadow2;
+      }
+    }
+  }
 }
