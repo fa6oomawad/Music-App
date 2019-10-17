@@ -10,7 +10,7 @@
   width: 22vw;
   vertical-align: top;
   margin: 15px;
-  margin-top: 40px;
+  margin-top: 25px;
   background-color: white;
   border-radius: 12px;
   display: inline-block;
@@ -50,12 +50,14 @@
   display: inline-block;
   height: 85vh;
   width: 66vw;
-  margin-top: 40px;
+  margin-top: 25px;
   margin-left: 21px;
   border-radius: 12px;
   -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   padding: 14px;
+  padding-bottom: 0px;
+  padding-top: 7px;
 }
 
 .boxes-wrapper .grid-wrap {
@@ -78,5 +80,12 @@
   border-radius: 12px;
   -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+}
+
+.boxes-wrapper .grid-wrap .small-box .title {
+  text-align: center;
+  display: block;
+  text-transform: capitalize;
+  font-size: 14px;
 }
 /*# sourceMappingURL=main.css.map */
