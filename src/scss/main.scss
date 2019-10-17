@@ -13,7 +13,7 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   vertical-align: top;
 
   margin: 15px;
-  margin-top: 40px;
+  margin-top: 25px;
   background-color: white;
   border-radius: $border-rad;
   display: inline-block;
@@ -51,13 +51,15 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   display: inline-block;
   height: 85vh;
   width: 66vw;
-  margin-top: 40px;
+  margin-top: 25px;
   margin-left: 21px;
   border-radius: $border-rad;
   -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   padding: 14px;
+  padding-bottom: 0px;
+  padding-top: 7px;
   .grid-wrap {
     display: grid;
     grid-gap: 14px;
@@ -77,6 +79,12 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
         border-radius: $border-rad;
 
         box-shadow: $shadow2;
+      }
+      .title {
+        text-align: center;
+        display: block;
+        text-transform: capitalize;
+        font-size: 14px;
       }
     }
   }
