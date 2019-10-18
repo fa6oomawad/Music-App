@@ -88,4 +88,18 @@
   text-transform: capitalize;
   font-size: 14px;
 }
+
+.audio-box {
+  width: 100vw;
+  height: 10vh;
+  background-color: white;
+  position: absolute;
+  top: 90%;
+}
+
+.audio-box .audioo {
+  width: 100%;
+  color: black;
+  padding-top: 6px;
+}
 /*# sourceMappingURL=main.css.map */

@@ -89,3 +89,17 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
     }
   }
 }
+
+.audio-box {
+  width: 100vw;
+  height: 10vh;
+  background-color: white;
+  position: absolute;
+  top: 90%;
+  .audioo{
+    width: 100%;
+    color: black;
+    padding-top: 6px;
+  }
+}
+
