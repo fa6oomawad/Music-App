@@ -1,4 +1,5 @@
 $font-color: grey;
+$font-color2: black;
 $border-rad: 12px;
 $shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
 $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
@@ -6,7 +7,54 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   width: 100vw;
   height: 100vh;
+
+  .startBox {
+    position: absolute;
+    background: white;
+    width: 55vw;
+    height: 25vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: $border-rad;
+    box-shadow: $shadow;
+    padding-top: 40px;
+    .start-text {
+      color: $font-color2;
+      text-align: center;
+      display: block;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .start-link {
+      text-decoration: none;
+
+      .start-btn {
+        color: $font-color;
+        cursor: pointer;
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        width: 100px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 18px;
+        width: 150px;
+        height: 43px;
+        border: none;
+        border-radius: $border-rad;
+        background: #fed6e3;
+        transition: 0.7s all;
+        &:hover {
+          background: #c3e7e5;
+        }
+      }
+    }
+  }
 }
+
 .side-nav {
   height: 85vh;
   width: 22vw;
@@ -96,10 +144,9 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   background-color: white;
   position: absolute;
   top: 90%;
-  .audioo{
+  .audioo {
     width: 100%;
     color: black;
     padding-top: 6px;
   }
 }
-

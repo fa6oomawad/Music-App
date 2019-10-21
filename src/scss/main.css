@@ -5,6 +5,57 @@
   height: 100vh;
 }
 
+.full-page .startBox {
+  position: absolute;
+  background: white;
+  width: 55vw;
+  height: 25vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 12px;
+  -webkit-box-shadow: 9px 10px 13px -4px #b0b0b0;
+          box-shadow: 9px 10px 13px -4px #b0b0b0;
+  padding-top: 40px;
+}
+
+.full-page .startBox .start-text {
+  color: black;
+  text-align: center;
+  display: block;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.full-page .startBox .start-link {
+  text-decoration: none;
+}
+
+.full-page .startBox .start-link .start-btn {
+  color: grey;
+  cursor: pointer;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  width: 100px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 18px;
+  width: 150px;
+  height: 43px;
+  border: none;
+  border-radius: 12px;
+  background: #fed6e3;
+  -webkit-transition: 0.7s all;
+  transition: 0.7s all;
+}
+
+.full-page .startBox .start-link .start-btn:hover {
+  background: #c3e7e5;
+}
+
 .side-nav {
   height: 85vh;
   width: 22vw;
