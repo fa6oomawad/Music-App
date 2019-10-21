@@ -14,6 +14,7 @@ export const scopes = [
   "user-read-currently-playing",
   "user-read-playback-state"
 ];
+
 //get the hash of url
 const hash = window.location.hash
   .substring(1)
@@ -34,12 +35,26 @@ class App extends Component {
       error: null,
       token: null
     };
+    this.getSpotifyData = this.getSpotifyData.bind(this);
   }
 
+  getSpotifyData(token) {
+    axios
+      .get("https://api.spotify.com/v1/me/top/tracks", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(data => {
+        console.log(data.data.items);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   componentDidMount() {
     let _token = hash.access_token;
     if (_token) {
       this.setState({ token: _token });
+      this.getSpotifyData(_token);
     }
   }
 
@@ -47,13 +62,23 @@ class App extends Component {
     return (
       <div className="full-page">
         {!this.state.token && (
-          <a
-            href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-              "%20"
-            )}&response_type=token&show_dialog=true`}
-          >
-            login to spotifiy{" "}
-          </a>
+          <div className="startBox">
+            <span className="start-text">
+              In order to start using the web App{" "}
+            </span>
+            <span className="start-text">
+              please login to your spotifiy account
+            </span>
+
+            <a
+              className="start-link"
+              href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+                "%20"
+              )}&response_type=token&show_dialog=true`}
+            >
+              <button className="start-btn">login</button>
+            </a>
+          </div>
         )}
         {this.state.token && <h1>hi</h1>}
       </div>
