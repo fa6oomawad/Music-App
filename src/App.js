@@ -80,7 +80,12 @@ class App extends Component {
             </a>
           </div>
         )}
-        {this.state.token && <h1>hi</h1>}
+        {this.state.token && (
+          <div>
+            <SideNav />
+            <MainBox />
+          </div>
+        )}
       </div>
     );
   }
