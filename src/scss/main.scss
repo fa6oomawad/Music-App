@@ -3,11 +3,27 @@ $font-color2: black;
 $border-rad: 12px;
 $shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
 $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+//mixin 
+@mixin box-style {
+  box-shadow: $shadow;
+  display: inline-block;
+  height: 85vh;
+  width: 66vw;
+  margin-top: 25px;
+  margin-left: 21px;
+  border-radius: $border-rad;
+  -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
+  padding: 14px;
+  padding-bottom: 0px;
+  padding-top: 7px;
+}
 .full-page {
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   width: 100vw;
   height: 100vh;
-
+//login component
   .startBox {
     position: absolute;
     background: white;
@@ -54,7 +70,7 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
     }
   }
 }
-
+//sidenav component
 .side-nav {
   height: 85vh;
   width: 22vw;
@@ -93,21 +109,10 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
     margin-bottom: 8px;
   }
 }
-
+//mainbox component
 .boxes-wrapper {
-  box-shadow: $shadow;
-  display: inline-block;
-  height: 85vh;
-  width: 66vw;
-  margin-top: 25px;
-  margin-left: 21px;
-  border-radius: $border-rad;
-  -webkit-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
-  padding: 14px;
-  padding-bottom: 0px;
-  padding-top: 7px;
+ @include  box-style;
+
   .grid-wrap {
     display: grid;
     grid-gap: 14px;
@@ -137,7 +142,7 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
     }
   }
 }
-
+//audio component
 .audio-box {
   width: 100vw;
   height: 10vh;
@@ -150,3 +155,28 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
     padding-top: 6px;
   }
 }
+
+//home component 
+
+.homeBox{
+  @include box-style;
+  .grid-wrap2{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+      "box1 box1 box1 box2 box2";
+      
+      .small-box {
+  
+      
+  
+        img {
+          height: 90%;
+          width: 100%;
+          border-radius: $border-rad;
+  
+          box-shadow: $shadow2;
+        }
+  }
+}
+
