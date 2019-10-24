@@ -3,7 +3,7 @@ $font-color2: black;
 $border-rad: 12px;
 $shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
 $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
-//mixin 
+//mixin
 @mixin box-style {
   box-shadow: $shadow;
   display: inline-block;
@@ -23,7 +23,7 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   width: 100vw;
   height: 100vh;
-//login component
+  //login component
   .startBox {
     position: absolute;
     background: white;
@@ -111,7 +111,7 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
 }
 //mainbox component
 .boxes-wrapper {
- @include  box-style;
+  @include box-style;
 
   .grid-wrap {
     display: grid;
@@ -156,27 +156,53 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
   }
 }
 
-//home component 
+//home component
 
-.homeBox{
+.homeBox {
   @include box-style;
-  .grid-wrap2{
+  .grid-wrap2 {
     display: grid;
     grid-gap: 10px;
     grid-template-areas:
-      "box1 box1 box1 box2 box2";
-      
-      .small-box {
-  
-      
-  
-        img {
-          height: 90%;
-          width: 100%;
-          border-radius: $border-rad;
-  
-          box-shadow: $shadow2;
-        }
+      "box1 box1 box2"
+      "box3 box4 box5";
+    grid-template-columns: repeat(3, 1fr);
+    width: 91%;
+    margin: 0 auto;
+    padding-top: 7px;
+    .gridbox {
+      margin: 0 auto;
+      margin-bottom: 10px;
+
+      height: 250px;
+      width: 100px;
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: $border-rad;
+
+        box-shadow: $shadow2;
+      }
+    }
+    .box1 {
+      grid-area: box1;
+      width: 100%;
+    }
+    .box2 {
+      grid-area: box2;
+      width: 100%;
+    }
+    .box4 {
+      grid-area: box4;
+      width: 100%;
+    }
+    .box3 {
+      grid-area: box3;
+      width: 100%;
+    }
+    .box5 {
+      grid-area: box5;
+      width: 100%;
+    }
   }
 }
-
