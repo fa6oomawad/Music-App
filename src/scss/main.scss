@@ -164,8 +164,8 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
     display: grid;
     grid-gap: 10px;
     grid-template-areas:
-      "box1 box1 box2"
-      "box3 box4 box5";
+      "box0 box0 box1"
+      "box2 box3 box4";
     grid-template-columns: repeat(3, 1fr);
     width: 91%;
     margin: 0 auto;
@@ -176,6 +176,7 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
 
       height: 250px;
       width: 100px;
+
       img {
         height: 100%;
         width: 100%;
@@ -200,8 +201,8 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
       grid-area: box3;
       width: 100%;
     }
-    .box5 {
-      grid-area: box5;
+    .box0 {
+      grid-area: box0;
       width: 100%;
     }
   }
