@@ -4,37 +4,14 @@ function Home(props) {
   return (
     <div className="homeBox">
       <div className="grid-wrap2">
-        <div className="gridbox box1">
-          <img
-            src="https://images-na.ssl-images-amazon.com/images/I/91nND-Wro2L._SL1000_.jpg"
-            alt="album cover"
-          />
-        </div>
-        <div className="gridbox box2">
-          <img
-            src="https://images-na.ssl-images-amazon.com/images/I/91nND-Wro2L._SL1000_.jpg"
-            alt="album cover"
-          />
-        </div>
-
-        <div className="gridbox box3">
-          <img
-            src="https://images-na.ssl-images-amazon.com/images/I/91nND-Wro2L._SL1000_.jpg"
-            alt="album cover"
-          />
-        </div>
-        <div className="gridbox box4">
-          <img
-            src="https://images-na.ssl-images-amazon.com/images/I/91nND-Wro2L._SL1000_.jpg"
-            alt="album cover"
-          />
-        </div>
-        <div className="gridbox box5">
-          <img
-            src="https://images-na.ssl-images-amazon.com/images/I/91nND-Wro2L._SL1000_.jpg"
-            alt="album cover"
-          />
-        </div>
+        {props.data.slice(0, 5).map((item, index) => {
+          return (
+            <div className={`gridbox box${index}`}>
+              <img src={item.images[0].url} alt="album cover" />
+              <p>{item.name}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
