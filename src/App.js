@@ -5,7 +5,7 @@ import axios from "axios";
 import SideNav from "./SideNav";
 import MainBox from "./MainBox";
 import AudioPlayer from "./AudioPlayer";
-
+import Home from "./Home";
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "17c7989532b543d3b35deb70c943a31c";
 export const redirectUri = "http://localhost:3000/";
@@ -40,11 +40,11 @@ class App extends Component {
 
   getSpotifyData(token) {
     axios
-      .get("https://api.spotify.com/v1/me/top/tracks", {
+      .get("https://api.spotify.com/v1/browse/new-releases", {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(data => {
-        console.log(data.data.items);
+        this.setState({ data: data.data.albums.items });
       })
       .catch(error => {
         console.log(error);
@@ -83,7 +83,8 @@ class App extends Component {
         {this.state.token && (
           <div>
             <SideNav />
-            <MainBox />
+            {this.state.data && <Home data={this.state.data} />}
+            {console.log(this.state.data)}
           </div>
         )}
       </div>
