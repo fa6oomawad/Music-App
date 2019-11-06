@@ -1,5 +1,6 @@
 $font-color: grey;
 $font-color2: black;
+$font-color3: white;
 $border-rad: 12px;
 $shadow: 9px 10px 13px -4px rgba(176, 176, 176, 1);
 $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
@@ -176,13 +177,31 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
 
       height: 250px;
       width: 100px;
-
+      position: relative;
       img {
         height: 100%;
         width: 100%;
         border-radius: $border-rad;
 
         box-shadow: $shadow2;
+      }
+      .textt {
+        white-space: pre-wrap; /* CSS3 */
+        white-space: -moz-pre-wrap; /* Firefox */
+        white-space: -pre-wrap; /* Opera <7 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-wrap: break-word; /* IE */
+        color: $font-color3;
+        position: absolute;
+        top: 66%;
+        right: 4px;
+        top: 76%;
+
+        text-align: right;
+        width: 100%;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin: 0;
       }
     }
     .box1 {
