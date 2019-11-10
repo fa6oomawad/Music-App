@@ -126,7 +126,20 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
       height: 155px;
       margin: 0 auto;
       margin-bottom: 10px;
+      position: relative;
+      .overlay {
+        width: 153px;
+        height: 90%;
+        position: absolute;
+        top: 0;
+        border-radius: $border-rad;
 
+        background-color: rgba(92, 92, 92, 0.699);
+        .play{
+          margin: 0 auto;
+
+        }
+      }
       img {
         height: 90%;
         width: 100%;
@@ -139,6 +152,9 @@ $shadow2: 0px 0px 9px -4px rgba(0, 0, 0, 0.75);
         display: block;
         text-transform: capitalize;
         font-size: 14px;
+        color:$font-color3;
+        font-weight: 500;
+        
       }
     }
   }
