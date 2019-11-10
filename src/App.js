@@ -83,7 +83,7 @@ class App extends Component {
         {this.state.token && (
           <div>
             <SideNav />
-            {this.state.data && <Home data={this.state.data} />}
+            {this.state.data && <MainBox data={this.state.data} />}
             {console.log(this.state.data)}
           </div>
         )}
