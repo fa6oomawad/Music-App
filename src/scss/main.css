@@ -123,6 +123,20 @@
   height: 155px;
   margin: 0 auto;
   margin-bottom: 10px;
+  position: relative;
+}
+
+.boxes-wrapper .grid-wrap .small-box .overlay {
+  width: 153px;
+  height: 90%;
+  position: absolute;
+  top: 0;
+  border-radius: 12px;
+  background-color: rgba(92, 92, 92, 0.699);
+}
+
+.boxes-wrapper .grid-wrap .small-box .overlay .play {
+  margin: 0 auto;
 }
 
 .boxes-wrapper .grid-wrap .small-box img {
@@ -138,6 +152,8 @@
   display: block;
   text-transform: capitalize;
   font-size: 14px;
+  color: white;
+  font-weight: 500;
 }
 
 .audio-box {
