@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { Link, Route, BrowserRouter as Router } from "react-router-dom";
+import ArtistInfo from "./ArtistInfo";
 class MainBox extends Component {
   constructor(props) {
     super(props);
@@ -16,18 +17,14 @@ class MainBox extends Component {
     return (
       <div className="boxes-wrapper">
         <div className="grid-wrap">
-          {this.props.data.slice(0, 15).map(item => {
+          {this.props.data.data.items.map(item => {
             return (
               <div className="small-box">
                 <div className="overlay">
-                  <p
-                    className="play"
-                    onClick={() => {
-                      this.settingPlayer();
-                    }}
-                  >
-                    click here
-                  </p>
+                  <Link to="/singleArtist">
+                    {" "}
+                    <p className="play">show more</p>
+                  </Link>
                 </div>
                 <img src={item.images[0].url} alt="album cover" />
                 <span className="title">{item.name}</span>
