@@ -6,6 +6,8 @@ import SideNav from "./SideNav";
 import MainBox from "./MainBox";
 import AudioPlayer from "./AudioPlayer";
 import Home from "./Home";
+import ArtistInfo from "/ArtistInfo";
+import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "17c7989532b543d3b35deb70c943a31c";
 export const redirectUri = "http://localhost:3000/";
@@ -40,11 +42,11 @@ class App extends Component {
 
   getSpotifyData(token) {
     axios
-      .get("https://api.spotify.com/v1/browse/new-releases", {
+      .get("https://api.spotify.com/v1/me/top/artists", {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(data => {
-        this.setState({ data: data.data.albums.items });
+        this.setState({ data: data });
       })
       .catch(error => {
         console.log(error);
@@ -60,34 +62,42 @@ class App extends Component {
 
   render() {
     return (
-      <div className="full-page">
-        {!this.state.token && (
-          <div className="startBox">
-            <span className="start-text">
-              In order to start using the web App{" "}
-            </span>
-            <span className="start-text">
-              please login to your spotifiy account
-            </span>
+      <Router>
+        <div className="full-page">
+          {!this.state.token && (
+            <div className="startBox">
+              <span className="start-text">
+                In order to start using the web App{" "}
+              </span>
+              <span className="start-text">
+                please login to your spotifiy account
+              </span>
 
-            <a
-              className="start-link"
-              href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-                "%20"
-              )}&response_type=token&show_dialog=true`}
-            >
-              <button className="start-btn">login</button>
-            </a>
-          </div>
-        )}
-        {this.state.token && (
-          <div>
-            <SideNav />
-            {this.state.data && <MainBox data={this.state.data} />}
-            {console.log(this.state.data)}
-          </div>
-        )}
-      </div>
+              <a
+                className="start-link"
+                href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+                  "%20"
+                )}&response_type=token&show_dialog=true`}
+              >
+                <button className="start-btn">login</button>
+              </a>
+            </div>
+          )}
+          {this.state.token && (
+            <div>
+              <SideNav />
+              {this.state.data && <MainBox data={this.state.data} />}
+              {console.log(this.state.data)}
+              <AudioPlayer />
+            </div>
+          )}
+        </div>
+        <Route path="/singleArtist" component={ArtistInfo} />
+        <Route
+          path="/trendingArtists"
+          render={props => <MainBox {...props} data={this.state.data} />}
+        />
+      </Router>
     );
   }
 }
