@@ -5,34 +5,46 @@ class MainBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playstatus: false,
-      songlink: null
+      itemdata: null
     };
     this.settingPlayer = this.settingPlayer.bind(this);
   }
-  settingPlayer(link) {
-    this.setState({ playstatus: true, songlink: link });
+  settingPlayer(item) {
+    this.setState({ itemdata: item });
   }
   render() {
     return (
-      <div className="boxes-wrapper">
-        <div className="grid-wrap">
-          {this.props.data.data.items.map(item => {
-            return (
-              <div className="small-box">
-                <div className="overlay">
-                  <Link to="/singleArtist">
-                    {" "}
-                    <p className="play">show more</p>
-                  </Link>
+      <Router>
+        <div className="boxes-wrapper">
+          <div className="grid-wrap">
+            {this.props.data.data.items.map(item => {
+              return (
+                <div className="small-box">
+                  <div className="overlay">
+                    <Link to="/singleArtist">
+                      {" "}
+                      <p
+                        className="play"
+                        onClick={() => this.settingPlayer(item)}
+                      >
+                        show more
+                      </p>
+                    </Link>
+                  </div>
+                  <img src={item.images[0].url} alt="album cover" />
+                  <span className="title">{item.name}</span>
                 </div>
-                <img src={item.images[0].url} alt="album cover" />
-                <span className="title">{item.name}</span>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+          <Route
+            path="/singleArtist"
+            render={props => (
+              <ArtistInfo {...props} data={this.state.itemdata} />
+            )}
+          />
         </div>
-      </div>
+      </Router>
     );
   }
 }
