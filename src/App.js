@@ -6,7 +6,7 @@ import SideNav from "./SideNav";
 import MainBox from "./MainBox";
 import AudioPlayer from "./AudioPlayer";
 import Home from "./Home";
-import ArtistInfo from "/ArtistInfo";
+import ArtistInfo from "./ArtistInfo";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "17c7989532b543d3b35deb70c943a31c";
@@ -83,20 +83,13 @@ class App extends Component {
               </a>
             </div>
           )}
-          {this.state.token && (
-            <div>
-              <SideNav />
-              {this.state.data && <MainBox data={this.state.data} />}
-              {console.log(this.state.data)}
-              <AudioPlayer />
-            </div>
-          )}
+          {this.state.token && <SideNav />}
+
+          <Route
+            path="/trendingArtists"
+            render={props => <MainBox {...props} data={this.state.data} />}
+          />
         </div>
-        <Route path="/singleArtist" component={ArtistInfo} />
-        <Route
-          path="/trendingArtists"
-          render={props => <MainBox {...props} data={this.state.data} />}
-        />
       </Router>
     );
   }
