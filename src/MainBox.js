@@ -17,11 +17,12 @@ class MainBox extends Component {
       <Router>
         <div className="boxes-wrapper">
           <div className="grid-wrap">
+            {console.log(this.props.data.data.items)}
             {this.props.data.data.items.map(item => {
               return (
                 <div className="small-box">
                   <div className="overlay">
-                    <Link to="/singleArtist">
+                    <Link to={`${this.props.match.url}/${item.id}`}>
                       {" "}
                       <p
                         className="play"
@@ -37,8 +38,10 @@ class MainBox extends Component {
               );
             })}
           </div>
+
           <Route
-            path="/singleArtist"
+            exact
+            path={`${this.props.match.path}/:artistId`}
             render={props => (
               <ArtistInfo {...props} data={this.state.itemdata} />
             )}
